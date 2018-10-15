@@ -17,11 +17,11 @@ defmodule AccountKit.Mixfile do
       name: "Account Kit",
       package: package(),
       preferred_cli_env: [
-        "coveralls": :test,
+        coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test,
-        "vcr": :test,
+        vcr: :test,
         "vcr.delete": :test,
         "vcr.check": :test,
         "vcr.show": :test

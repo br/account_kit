@@ -16,7 +16,7 @@ defmodule AccountKit do
       "grant_type=authorization_code",
       "code=#{code}",
       "access_token=#{server_token()}",
-      appsecret_proof_param(server_token(), require_appsecret)
+      appsecret_proof_param(server_token(), require_appsecret())
     ]
     |> Enum.reject(&(&1 == nil))
     |> Enum.join("&")
@@ -37,7 +37,7 @@ defmodule AccountKit do
   def delete_account(account_id, access_token) do
     query_params = [
       "access_token=#{server_token()}",
-      appsecret_proof_param(access_token, require_appsecret)
+      appsecret_proof_param(access_token, require_appsecret())
     ]
     |> Enum.reject(&(&1 == nil))
     |> Enum.join("&")
@@ -58,7 +58,7 @@ defmodule AccountKit do
   def me(access_token) do
     query_params = [
       "access_token=#{access_token}",
-      appsecret_proof_param(access_token, require_appsecret)
+      appsecret_proof_param(access_token, require_appsecret())
     ]
     |> Enum.reject(&(&1 == nil))
     |> Enum.join("&")

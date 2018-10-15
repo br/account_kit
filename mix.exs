@@ -17,11 +17,11 @@ defmodule AccountKit.Mixfile do
       name: "Account Kit",
       package: package(),
       preferred_cli_env: [
-        "coveralls": :test,
+        coveralls: :test,
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test,
-        "vcr": :test,
+        vcr: :test,
         "vcr.delete": :test,
         "vcr.check": :test,
         "vcr.show": :test
@@ -29,7 +29,7 @@ defmodule AccountKit.Mixfile do
       source_url: "https://github.com/bleacherreport/account_kit",
       start_permanent: Mix.env == :prod,
       test_coverage: [tool: ExCoveralls],
-      version: "0.1.0"
+      version: "0.1.1"
     ]
   end
 
@@ -39,14 +39,14 @@ defmodule AccountKit.Mixfile do
 
   defp deps do
     [
-      {:credo,       "~> 0.5",  only: [:dev]},
-      {:dialyxir,    "~> 0.4",  only: [:dev]},
-      {:earmark,     "~> 1.0",  only: [:dev]},
-      {:ex_doc,      "~> 0.14", only: [:dev]},
-      {:excoveralls, "~> 0.6",  only: [:test]},
-      {:exvcr,       "~> 0.8",  only: [:test]},
-      {:httpoison,   "~> 0.11.0"},
-      {:poison,      "~> 1.5 or ~> 2.0 or ~> 3.0"}
+      {:credo,       "~> 0.10",  only: [:dev]},
+      {:dialyxir,    "~> 0.5",  only: [:dev]},
+      {:earmark,     "~> 1.2",  only: [:dev]},
+      {:ex_doc,      "~> 0.19", only: [:dev]},
+      {:excoveralls, "~> 0.10",  only: [:test]},
+      {:exvcr,       "~> 0.10",  only: [:test]},
+      {:httpoison,   "~> 1.3"},
+      {:poison,      "~> 1.5 or ~> 2.0 or ~> 3.0 or ~> 4.0"}
     ]
   end
 
